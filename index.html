@@ -8,7 +8,29 @@
     <title>Product landing page</title>
   </head>
   <body>
-    <header class="container-fluid" style="background: url(https://images.unsplash.com/photo-1484656551321-a1161420a2a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) center; background-size: cover;">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Surname: <span class="modal-surname"></span></p>
+            <p>Name: <span class="modal-name"></span></p>
+            <p>Phone: <span class="modal-phone"></span></p>
+            <p>Email: <span class="modal-email"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="container-fluid" data-parallax="scroll" data-image-src="https://images.unsplash.com/photo-1484656551321-a1161420a2a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
       <div class="container-md vh-100">
         <div class="row h-25">
           <div class="col pt-3 pt-sm-5 d-flex justify-content-end align-items-start">
@@ -118,29 +140,29 @@
       </section>
       <section class="container-fluid bg-light pt-5 pb-5">
         <div class="container-md">
-          <form id="form">
+          <form id="form" action="/" name="form">
             <div class="form-group">
               <label for="exampleInputSurname">Surname</label>
-              <input type="text" class="form-control" id="exampleInputSurname" required minlength="3" maxlength="20" aria-describedby="surnameHelp">
+              <input type="text" class="form-control" id="exampleInputSurname" name="exampleInputSurname" required minlength="3" maxlength="20" aria-describedby="surnameHelp">
               <small id="surnameHelp" class="form-text text-muted">Lorem ipsum dolor sit amet.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputName">Name</label>
-              <input type="text" class="form-control" id="exampleInputName" required minlength="3" maxlength="20" aria-describedby="nameHelp">
+              <input type="text" class="form-control" id="exampleInputName" name="exampleInputName" required minlength="3" maxlength="20" aria-describedby="nameHelp">
               <small id="nameHelp" class="form-text text-muted">Lorem ipsum dolor sit amet.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPhone">Phone</label>
-              <input type="text" class="form-control" id="exampleInputPhone" required minlength="10" maxlength="20" aria-describedby="phoneHelp">
+              <input type="text" class="form-control" id="exampleInputPhone" name="exampleInputPhone" required minlength="10" maxlength="20" aria-describedby="phoneHelp">
               <small id="phoneHelp" class="form-text text-muted">Lorem ipsum dolor sit amet.</small>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" required aria-describedby="emailHelp">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="d-flex justify-content-end align-items-end">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary btn-form" data-toggle="modal" data-target="#exampleModal">Submit</button>
             </div>
           </form>
         </div>
@@ -159,5 +181,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
+    <script src="./jquery-1.11.3.min.js"></script>
+    <script src="./parallax.min.js"></script>
   </body>
 </html>
